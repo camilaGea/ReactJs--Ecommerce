@@ -1,10 +1,12 @@
+import CartWidget from "./CartWidget";
+import "./styles.css"
 
 
 function NavBar(){
     return(
-        <nav className='navbar navbar-expand-lg bg-warning bg-opacity-50'>
+        <nav className='navbar navbar-expand-lg navColor'>
             <div className='container-fluid '>
-                <a className='navbar-brand text-dark pe-5' href="#">Tienda</a>
+                <a className='navbar-brand text-dark pe-5' href="#">COPITOS</a>
                 <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className='navbar-toggler-icon'></span>
                 </button>
@@ -24,7 +26,7 @@ function NavBar(){
                         </li>
                     </ul>
                 </div>
-                
+                <CartWidget/>
             </div>
         </nav>
     );
