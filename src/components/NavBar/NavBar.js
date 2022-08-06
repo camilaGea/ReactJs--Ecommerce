@@ -1,5 +1,6 @@
-import CartWidget from "./CartWidget";
-import "./styles.css"
+
+import CartWidget from "../CardWiget/CartWidget"
+import "./navBar.css"
 
 
 function NavBar(){
@@ -33,3 +34,4 @@ function NavBar(){
 }
 
 export default NavBar
+
