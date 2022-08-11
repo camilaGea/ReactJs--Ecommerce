@@ -1,11 +1,12 @@
-const Data = [{
+const Data = [
+  {
     "id": 1,
     "nombre": "Buzo",
     "detalle": "Frizado Nene",
     "precio": "1800",
     "color": "Indigo",
     "talle": 9,
-    "img": "http://dummyimage.com/238x100.png/cc0000/ffffff",
+    "img": "/img/buzoNene.jpg",
     "stock": 20
   }, {
     "id": 2,
