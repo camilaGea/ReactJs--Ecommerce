@@ -1,20 +1,18 @@
-import Button from "../Button/Button";
-import ItemCount from "../ItemCount/ItemCount"
-import "./item.css"
+import React from "react";
+import "./item.css";
+import { Link } from "react-router-dom"
 
-function Item ({nombre,precio, img, detalle, stock, talle}){
+function Item ({nombre,precio, img, stock, id}){
     return (
         <div className="card mt-5 shadow p-3 mb-5 bg-white rounded" >
           <div className="card-img">
             <img src={img} className="img-fluid " alt="imagen" />
           </div>
           <div className="card-body">
-            <h2>{nombre}</h2>
-            <p>{detalle}</p>
-            <p> Talle {talle}</p>
-            <h4>$ {precio}</h4>
-            <Button type text="Ver más"></Button>
-            <h4>Stock {stock}</h4>
+            <h2 className="itemNombre">{nombre}</h2>
+            <h4 className="itemPrecio">$ {precio}</h4>
+            <Link to={`/detalle/${id}`} className="verMas">Ver Detalle</Link>
+            <h4 className="itemStock">Stock {stock}</h4>
           </div>
         </div>
       );

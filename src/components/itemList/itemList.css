@@ -1,4 +1,4 @@
-.contenedor_Item{
+.contenedorItem{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

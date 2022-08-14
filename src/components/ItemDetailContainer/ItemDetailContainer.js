@@ -1,32 +1,38 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState} from "react";
 import Data from "../../data/Data";
 import ItemDetail from "../ItemDetail/ItemDetail";
-
-function traerProductos() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(Data), 2000);
-    });
-}
-
+import {useParams } from "react-router-dom";
+import './itemDetailContainer.css'
+ 
 function ItemDetailContainer() {
-    const [products, setProducts] = useState ([]);
-
+    const [products, setProducts] = useState ({});
+    const id = useParams().id
+ 
+    function traerProductos() {
+        return new Promise((resolve, reject) => {
+            let itemRequested = Data.find((element) => element.id === Number(id));
+            setTimeout(() => {
+                if (itemRequested === undefined) reject("No encontramos el item");
+                else resolve(itemRequested);
+            }, 1000);
+        });
+    }
+ 
     useEffect (() => {
         traerProductos()
-            .then((respuesta) =>{
-                setProducts(respuesta[0]);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+            .then((respuesta) => setProducts(respuesta))
+            .catch((error) => alert(error));
     }, []);
-
+ 
     return(
         <>
-            <h2> DETALLE DE PRODUCTO</h2>
-            <ItemDetail item={products} />
+        <div className="contHome">
+            <h2 className="itemH2"> DETALLE DE PRODUCTO</h2>
+        </div>
+        <ItemDetail item={products} />
         </>
     )
 }
-
+ 
 export default ItemDetailContainer;
+

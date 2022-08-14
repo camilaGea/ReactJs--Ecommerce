@@ -3,10 +3,16 @@ import "./itemList.css"
 
 function ItemList ({props}){
     return (
-        <div className="contenedor_Item">
+        <div className="contenedorItem">
             { props.map((item) => {
                 return (
-                    <Item key={item.id} nombre={item.nombre} precio={item.precio} img={item.img} detalle={item.detalle} talle={item.talle} stock={item.stock}/>
+                    <Item 
+                    key={item.id}
+                    id= {item.id}
+                    nombre={item.nombre} 
+                    precio={item.precio} 
+                    img={item.img} 
+                    stock={item.stock}/>
                 )
             })}
         </div>
