@@ -11,7 +11,7 @@ function Item ({nombre,precio, img, stock, id}){
           <div className="card-body">
             <h2 className="itemNombre">{nombre}</h2>
             <h4 className="itemPrecio">$ {precio}</h4>
-            <Link to={`/detalle/${id}`} className="verMas">Ver Detalle</Link>
+            <Link to={`/detail/${id}`} className="verMas">Ver Detalle</Link>
             <h4 className="itemStock">Stock {stock}</h4>
           </div>
         </div>
