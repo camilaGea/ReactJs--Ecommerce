@@ -1,9 +1,8 @@
-import React from 'react';
+import React , { useState } from 'react';
 import "./itemCount.css"
 
 function ItemCount (props){
-
-    const [contador, setCont] = React.useState(1)
+    const [contador, setCont] = useState(1);
 
     const contIncrementador = () => {
         contador < props.stock ? setCont(contador +1) : console.log("No hay mas Stock")
@@ -11,10 +10,6 @@ function ItemCount (props){
 
     const contDecrementador = () => {
         contador > props.initial ? setCont(contador - 1 ) :  console.log("no decremetar en negativo")
-      }
-    
-    const onAdd = () => {
-        console.log ("AGREGADO")
     }
 
     return(
@@ -25,7 +20,7 @@ function ItemCount (props){
                 <h4>{contador}</h4>
                 <button className='btnMasMenos' onClick={ contDecrementador } >-</button>
             </div>
-            <button className="btnCont" onClick={ onAdd }> Agregar</button>
+            <button className="btnCont" onClick={ () => props.onAdd(contador)}> Agregar</button>
       </>
 
     );
