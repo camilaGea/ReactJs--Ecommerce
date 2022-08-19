@@ -14,13 +14,13 @@ function ItemCount (props){
 
     return(
         <>
-            <h3 className='contCantidad'> CANTIDAD </h3>
-            <div className= "conteContador">
-                <button className='btnMasMenos' onClick={ contIncrementador } >+</button>
+            <h3 className='container-amount'> CANTIDAD </h3>
+            <div className= "container-counter">
+                <button className='btn-plus-less' onClick={ contIncrementador } >+</button>
                 <h4>{contador}</h4>
-                <button className='btnMasMenos' onClick={ contDecrementador } >-</button>
+                <button className='btn-plus-less' onClick={ contDecrementador } >-</button>
             </div>
-            <button className="btnCont" onClick={ () => props.onAdd(contador)}> Agregar</button>
+            <button className="btn-counter" onClick={ () => props.onAdd(contador)}> Agregar</button>
       </>
 
     );

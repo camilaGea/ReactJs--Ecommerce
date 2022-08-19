@@ -9,10 +9,10 @@ function Item ({nombre,precio, img, stock, id}){
             <img src={img} className="img-fluid " alt="imagen" />
           </div>
           <div className="card-body">
-            <h2 className="itemNombre">{nombre}</h2>
-            <h4 className="itemPrecio">$ {precio}</h4>
-            <Link to={`/detail/${id}`} className="verMas">Ver Detalle</Link>
-            <h4 className="itemStock">Stock {stock}</h4>
+            <h2 className="item-name">{nombre}</h2>
+            <h4 className="item-price">$ {precio}</h4>
+            <Link to={`/detail/${id}`} className="see-more">Ver Detalle</Link>
+            <h4 className="item-stock">Stock {stock}</h4>
           </div>
         </div>
       );

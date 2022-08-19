@@ -22,7 +22,7 @@
     transform: translateY(-6px);
 }
 
-.verMas {
+.see-more {
     text-decoration: none;
     color: white;
     padding: 10px;
@@ -30,16 +30,16 @@
     border-radius: 5rem;
 }
 
-.verMas:hover{
+.see-more:hover{
     color: black;
 }
 
-.itemPrecio{
+.item-price{
     padding-bottom: 15px;
     font-size: 20px;
 }
 
-.itemStock{
+.item-stock{
     padding-top: 15px;
     font-size: 15px;
 }

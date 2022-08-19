@@ -3,7 +3,7 @@ import "./itemList.css"
 
 function ItemList ({props}){
     return (
-        <div className="contenedorItem">
+        <div className="container-item">
             { props.map((item) => {
                 return (
                     <Item 

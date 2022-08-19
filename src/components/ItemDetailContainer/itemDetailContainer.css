@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
- 
-.contHome{
+ .container-home{
     padding: 10px;
 }
-.itemH2{
+.item-H2{
     font-family: 'Nunito', sans-serif;
 }

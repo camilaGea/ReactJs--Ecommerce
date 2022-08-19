@@ -18,11 +18,11 @@ function ItemListContainer (props){
     useEffect (() => {
         traerProductos()
             .then((respuesta) =>{
-                let itemsFilter = Data.filter((element) => element.category === idCategory)
                 if (idCategory === undefined){
                     setProducts(respuesta)
                 }
                 else{
+                    let itemsFilter = Data.filter((element) => element.category === idCategory)
                     setProducts(itemsFilter)
                 }
             })
@@ -33,8 +33,8 @@ function ItemListContainer (props){
  
     return(
         <div >
-            <div className="contHome">
-                <h1 className="itemH1"> {props.greeting}</h1>
+            <div className="container-home">
+                <h1 className="item-H1"> {props.greeting}</h1>
             </div>
             <ItemList props={products} />
         </div>

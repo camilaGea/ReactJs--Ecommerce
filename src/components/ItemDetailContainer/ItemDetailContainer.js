@@ -26,8 +26,8 @@ function ItemDetailContainer() {
  
     return(
         <>
-        <div className="contHome">
-            <h2 className="itemH2"> DETALLE DE PRODUCTO</h2>
+        <div className="container-home">
+            <h2 className="item-H2"> DETALLE DE PRODUCTO</h2>
         </div>
         <ItemDetail item={products} />
         </>

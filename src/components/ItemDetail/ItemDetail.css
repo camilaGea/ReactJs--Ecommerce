@@ -1,28 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
  
-.textDetalle{
+.text-detail{
     display: flex;
     align-items: center;
     background-color: #E6BA95;
     border-radius: .6rem;
 }
  
-.imgDetalle img {
+.img-detail img {
     width: 80%;
     object-fit: cover;  
     border-radius: .6rem;
 }
  
-.itemNombre {
+.item-name {
     font-family: 'Nunito', sans-serif;
 }
  
-.stockDisponible{
+.stock-disposable{
     padding-top: 15px;
     font-weight: bold;
 }
  
-.linkInicio{
+.link-initiation{
     border: black solid 2px;
     border-radius: 15%;
     background-color: black;
@@ -31,11 +31,11 @@
     text-decoration: none;
 }
  
-.linkInicio:hover {
+.link-initiation:hover {
     color: white;
 }
 
-.linkCompra {
+.link-buy {
     border: black solid 2px;
     border-radius: 15px;
     background-color: black;
@@ -44,6 +44,6 @@
     text-decoration: none;
 }
 
-.linkCompra:hover{
+.link-buy:hover{
     color: white;
 }
