@@ -1,0 +1,20 @@
+.main {
+    min-height: 650px;
+}
+.link-comprar{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-comprar{
+    padding: 10px;
+    font-size: 15px;
+    background-color: #E6BA95;
+    color: black;
+    border-radius: 5px;
+}
+
+.btn-comprar:hover{
+    color: white;
+}

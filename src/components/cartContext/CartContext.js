@@ -19,6 +19,11 @@ function CartContextProvider ({children}){
         }
     }
 
+
+    function itemsCarrito(){
+		return cartList.reduce((prev, next) => prev + next.cantidad, 0);
+	}
+
     function isInCart(id){
         //existe?
         return (cartList.some(item => item.id === id))
@@ -34,8 +39,12 @@ function CartContextProvider ({children}){
         setCartList(cartList.filter(item => item.id !== id))
     }
 
+    function totalCart (){
+        return(cartList.reduce((total, item) => total + (item.cantidad * item.precio), 0))
+    }
+
     return (
-        <CartContext.Provider value={{cartList, addItem, isInCart, clear, removeItem}}>
+        <CartContext.Provider value={{cartList, addItem, isInCart, clear, removeItem, itemsCarrito, totalCart}}>
             {children}
         </CartContext.Provider>
     );
