@@ -1,8 +1,9 @@
-import Data from "../../data/Data"
 import React, { useEffect, useState } from "react"
 import ItemList from "../itemList/ItemList";
 import { useParams } from "react-router-dom";
-import './itemListContainer.css'
+import './itemListContainer.css';
+import firestoreDB from '../../services/dataBase';
+import { getDocs, collection, query, where} from 'firebase/firestore';
  
 function ItemListContainer (props){
     const [products, setProducts] = useState ([]);
@@ -10,25 +11,38 @@ function ItemListContainer (props){
  
     function traerProductos() {
         return new Promise((resolve) => {
-          setTimeout(() => resolve(Data), 2000);
+          const productsCollections = collection(firestoreDB, "productos")
+          getDocs(productsCollections).then(snapshot => {
+            const docsData = snapshot.docs.map(doc => { return { ...doc.data(), id: doc.id }})
+            resolve(docsData)
+          })
         });
     }
- 
- 
-    useEffect (() => {
-        traerProductos()
-            .then((respuesta) =>{
-                if (idCategory === undefined){
-                    setProducts(respuesta)
-                }
-                else{
-                    let itemsFilter = Data.filter((element) => element.category === idCategory)
-                    setProducts(itemsFilter)
-                }
-            })
-            .catch((error) => {
-                console.log(error);
+
+    function traerProductoCategory(idCategory){
+        return new Promise((resolve) => {
+            const productsCollections = collection(firestoreDB, "productos");
+            const qProducts = query(productsCollections, where("category", "==", idCategory))
+            getDocs(qProducts).then(snapshot => {
+                const docsData = snapshot.docs.map(doc =>{
+                    return {...doc.data(), id: doc.id}
+                });
+                resolve(docsData);
+                
             });
+        });
+    };
+
+    useEffect (() => {
+        if (idCategory){
+            traerProductoCategory(idCategory).then((resolve) => {
+                setProducts(resolve)
+            });
+        }else {
+            traerProductos().then((resolve) =>{
+                setProducts(resolve)
+            })
+        }
     }, [idCategory]);
  
     return(

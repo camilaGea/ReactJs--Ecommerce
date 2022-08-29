@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faTrash} from "@fortawesome/free-solid-svg-icons"
 
 function Cart(){
-    const {cartList, clear, removeItem, itemsCarrito, totalCart} = useCartContext();
+    const {cartItems, clear, removeItem, totalProductsInCart, totalCart} = useCartContext();
     return(
         <>
-            {itemsCarrito() === 0 ? (
+            {totalProductsInCart() === 0 ? (
                 <div className="main">
                     <h1 className="text-center mt-3">
                         El Carrito esta VACIO!! 
@@ -31,7 +31,7 @@ function Cart(){
                             </tr>
                         </thead>
                         <tbody>
-                            {cartList.map((prod) => (
+                            {cartItems.map((prod) => (
                             <tr>
                                 <td key={prod.id}> {prod.id}</td>
                                 <th> <img src={prod.img} alt={prod.nombre} className="shadow-lg" style={{height: 100}} /></th>

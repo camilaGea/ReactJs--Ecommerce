@@ -1,28 +1,30 @@
 import React, { useEffect, useState} from "react";
-import Data from "../../data/Data";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import {useParams } from "react-router-dom";
-import './itemDetailContainer.css'
+import './itemDetailContainer.css';
+import firestoreDB from "../../services/dataBase";
+import { collection, doc, getDoc } from "firebase/firestore";
  
 function ItemDetailContainer() {
-    const [products, setProducts] = useState ({});
+    const [products, setProducts] = useState ([]);
     const id = useParams().id
  
-    function traerProductos() {
-        return new Promise((resolve, reject) => {
-            let itemRequested = Data.find((element) => element.id === Number(id));
-            setTimeout(() => {
-                if (itemRequested === undefined) reject("No encontramos el item");
-                else resolve(itemRequested);
-            }, 1000);
-        });
+
+    function traerProcutos(id){
+        return new Promise((resolve) => {
+            const productsCollections = collection(firestoreDB, "productos");
+            const docs = doc(productsCollections, id);
+            getDoc(docs).then(snapshot => {
+                resolve({ ...snapshot.data(), id: snapshot.id})
+            });
+        })
     }
- 
+
     useEffect (() => {
-        traerProductos()
-            .then((respuesta) => setProducts(respuesta))
-            .catch((error) => alert(error));
-    }, []);
+        traerProcutos(id).then(product => {
+            setProducts(product)
+        })
+    }, [id]);
  
     return(
         <>
