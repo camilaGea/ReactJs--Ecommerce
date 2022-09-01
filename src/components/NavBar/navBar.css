@@ -1,3 +1,35 @@
 .nav-color {
     background-color: #E6BA95;
 }
+
+.name{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.nav-bar {
+	top: 0px;
+	width: 100%;
+    background-color: #E6BA95;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.nav-list {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	list-style: none;
+	padding-right: 10px;
+}
+
+.nav-link li {
+	
+	font-size: 20px;
+	text-decoration: none;
+	margin-right: 13px;
+	transition: 0.3s;
+}

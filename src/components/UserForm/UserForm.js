@@ -31,7 +31,7 @@ function UserForm() {
         const order = await addDoc(collectionRef, ordenDeCompra )
         
         setOrderFirebase({id: order.id, complete: true});
-    
+        clear()
     } 
 
     function inputChangeHandler(evt) {
@@ -60,7 +60,6 @@ function UserForm() {
         <div className="main">
             <h1 className="text-center mt-3">Gracias por tu compra!</h1>
             <p className="text-center mt-3">El id de seguimiento de tu compra es: {orderFirebase.id}</p>
-            { clear() }
         </div>
 
         ) : (

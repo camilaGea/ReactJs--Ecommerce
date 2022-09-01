@@ -4,42 +4,31 @@ import { useParams } from "react-router-dom";
 import './itemListContainer.css';
 import firestoreDB from '../../services/dataBase';
 import { getDocs, collection, query, where} from 'firebase/firestore';
+/* import { faLeftLong } from "@fortawesome/free-solid-svg-icons"; */
  
 function ItemListContainer (props){
     const [products, setProducts] = useState ([]);
     const idCategory = useParams().idCategory
- 
-    function traerProductos() {
+
+    function traerProductos( qProducts) {
         return new Promise((resolve) => {
-          const productsCollections = collection(firestoreDB, "productos")
-          getDocs(productsCollections).then(snapshot => {
+          getDocs(qProducts).then(snapshot => {
             const docsData = snapshot.docs.map(doc => { return { ...doc.data(), id: doc.id }})
             resolve(docsData)
           })
         });
     }
-
-    function traerProductoCategory(idCategory){
-        return new Promise((resolve) => {
-            const productsCollections = collection(firestoreDB, "productos");
-            const qProducts = query(productsCollections, where("category", "==", idCategory))
-            getDocs(qProducts).then(snapshot => {
-                const docsData = snapshot.docs.map(doc =>{
-                    return {...doc.data(), id: doc.id}
-                });
-                resolve(docsData);
-                
-            });
-        });
-    };
-
+    
     useEffect (() => {
         if (idCategory){
-            traerProductoCategory(idCategory).then((resolve) => {
+            const productsCollections = collection(firestoreDB, "productos");
+            let qProducts = query(productsCollections, where("category", "==", idCategory))
+            traerProductos(qProducts).then((resolve) => {
                 setProducts(resolve)
             });
         }else {
-            traerProductos().then((resolve) =>{
+            const productsCollections = collection(firestoreDB, "productos");
+            traerProductos(productsCollections).then((resolve) =>{
                 setProducts(resolve)
             })
         }

@@ -1,5 +1,6 @@
 .main {
     min-height: 650px;
+    
 }
 .link-comprar{
     display: flex;
@@ -18,3 +19,16 @@
 .btn-comprar:hover{
     color: white;
 }
+
+.container-table{
+    margin: 0px 20px;
+}
+
+
+
+
+
+
+
+
+

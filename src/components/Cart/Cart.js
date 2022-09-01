@@ -16,13 +16,14 @@ function Cart(){
                     <Link className="link-comprar" to="/"> <button className="btn-comprar">COMPRAR</button> </Link>
                 </div>
             ) : (
-                <div className="container main">
-                    <h1 className="text-center">CARRITO DE COMPRAS</h1>
-                    <table className="table text-center">
+                <div className="main">
+                    <h1 className="text-center">Carrito de Compras</h1>
+                    <div className="container-table">
+
+                    <table className="table text-center table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>                            
-                                <th>Foto</th>                            
+                                <th>ID</th>                                                      
                                 <th>Nombre</th>
                                 <th>Cantidad</th>
                                 <th>Precio</th>
@@ -33,8 +34,7 @@ function Cart(){
                         <tbody>
                             {cartItems.map((prod) => (
                             <tr>
-                                <td key={prod.id}> {prod.id}</td>
-                                <th> <img src={prod.img} alt={prod.nombre} className="shadow-lg" style={{height: 100}} /></th>
+                                <td key={prod.id}> <img src={prod.img} alt={prod.nombre} className="shadow-lg" style={{height: 100}} /></td>
                                 <th>{prod.nombre}</th>
                                 <th>{prod.cantidad}</th>
                                 <th>{prod.precio}</th>
@@ -45,11 +45,14 @@ function Cart(){
                             ))}
                         </tbody>
                     </table>
-                    
+                    </div>
+                    <div className="text-center">
+
                     <h5>{`Importe Total de compra: ${totalCart()}`}</h5>
 
                     <button className="btn-comprar" onClick={() => clear()} >Vaciar Carrito</button>
                     <Link className="link-fromulario" to="/form"> <button className="btn-comprar">Finalizar Compra</button> </Link>
+                    </div>
                 </div>
             )
             }
