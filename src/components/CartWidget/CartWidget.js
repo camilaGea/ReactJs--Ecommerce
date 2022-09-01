@@ -4,12 +4,12 @@ import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
 import {useCartContext} from "../cartContext/CartContext";
 
 function CartWidget (cantidad){
-    const {itemsCarrito} = useCartContext();
-    if (itemsCarrito()!==0){
+    const {totalProductsInCart} = useCartContext();
+    if (totalProductsInCart()!==0){
     return(
-        <div className="text-decoration-none">
-            <FontAwesomeIcon icon= {faCartShopping} />
-            {` `+ itemsCarrito()}
+        <div className="cart-cant">
+            <FontAwesomeIcon className="cart-icon" icon= {faCartShopping} />
+            {` `+ totalProductsInCart()}
         </div>
     );}
     return (

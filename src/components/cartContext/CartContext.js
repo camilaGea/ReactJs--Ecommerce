@@ -19,7 +19,6 @@ function CartContextProvider ({children}){
         }
     }
 
-
     function totalProductsInCart(){
 		return cartItems.reduce((prev, next) => prev + next.cantidad, 0);
 	}

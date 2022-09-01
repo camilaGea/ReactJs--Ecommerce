@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "firebase/firestore"
+import {addDoc, collection, getFirestore} from "firebase/firestore";
+import Data from "../data/Data";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBYpyCrR8ewIeKEaO9cF7QXnoLiuq-fhjk",
@@ -13,5 +14,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const firestoreDB = getFirestore(app)
+
+export async function saveProductsToFIrebase() {
+  const collectionProducts = collection(firestoreDB, "productos")
+
+  for (let item of Data) {
+    const docref = await addDoc(collectionProducts, item);
+    console.log("documento crado con id:", docref.id)
+  }
+}
+
 
 export default firestoreDB

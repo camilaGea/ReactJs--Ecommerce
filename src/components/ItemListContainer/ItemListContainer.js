@@ -48,7 +48,7 @@ function ItemListContainer (props){
     return(
         <div >
             <div className="container-home">
-                <h1 className="item-H1"> {props.greeting}</h1>
+                <h1 className="text-center item-H1"> {props.greeting}</h1>
             </div>
             <ItemList props={products} />
         </div>

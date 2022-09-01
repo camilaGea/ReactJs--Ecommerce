@@ -2,7 +2,7 @@ import { useCartContext } from "../cartContext/CartContext";
 import { Link } from "react-router-dom";
 import "./cart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faTrash} from "@fortawesome/free-solid-svg-icons"
+import {faTrash} from "@fortawesome/free-solid-svg-icons";
 
 function Cart(){
     const {cartItems, clear, removeItem, totalProductsInCart, totalCart} = useCartContext();
@@ -49,6 +49,7 @@ function Cart(){
                     <h5>{`Importe Total de compra: ${totalCart()}`}</h5>
 
                     <button className="btn-comprar" onClick={() => clear()} >Vaciar Carrito</button>
+                    <Link className="link-fromulario" to="/form"> <button className="btn-comprar">Finalizar Compra</button> </Link>
                 </div>
             )
             }
