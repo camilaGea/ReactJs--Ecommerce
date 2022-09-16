@@ -1,35 +1,107 @@
-.nav-color {
-    background-color: #E6BA95;
-}
-
-.name{
-    text-transform: uppercase;
-    font-size: 20px;
-}
-.nav-bar {
-	top: 0px;
-	width: 100%;
-    background-color: #E6BA95;
+.header {
+	background-color: #E6BA95;
+	padding: 1rem 2rem;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+  }
+  
+  .header-nav {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-}
-
-.nav-list {
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-	flex-direction: row;
-	list-style: none;
-	padding-right: 10px;
-}
-
-.nav-link li {
-	
-	font-size: 20px;
+	flex-basis: 100%;
+	justify-content: space-evenly;
+  
+  }
+  
+  .header-logo{
 	text-decoration: none;
-	margin-right: 13px;
-	transition: 0.3s;
+	font-size: 1.6rem;
+	color: white;
+  }
+
+
+  .nav-links {
+	display: flex;
+	flex-basis: 80%;
+	justify-content: space-evenly;
+  }
+  
+  .ul-li {
+	font-size: 1.2rem;
+	font-weight: 600;
+	transition: color .3s;
+	text-decoration: none;
+	color: black;
+  }
+  
+  .ul-li:hover {
+	color: var(--main-color)
+  }
+  
+  .ul-img {
+	width: 12rem;
+  }
+  
+  .mobile-menu-icon {
+	display: none;
+  }
+  
+  @keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+  
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @media (max-width: 768px) {
+	.header {
+	  padding: 3rem 0;
+	}
+  
+	.header-nav {
+	  justify-content: space-evenly;
+	}
+
+	.header-logo{
+		font-size: 1.1rem;
+	}
+  
+	.nav-links {
+	  display: none; 
+	}
+  
+	.nav-links-mobile {
+	  position: absolute;
+	  display: flex;
+	  flex-direction: column;
+	  left: 0;
+	  top: 80%;
+	  width: 100%;
+	  animation: fade-in 0.3s;
+	  background-color: white;
+	}
+  
+	.ul-li {
+	  width: 100%;
+	  padding: 2rem;
+	  text-align: center;
+	  border-bottom: 1px solid var(--main-color);
+	}
+  
+	.ul-li:last-child {
+	  border: none;
+	}
+  
+.mobile-menu-icon {
+	position: absolute;
+	display: block;
+	right: 2rem;
+	background-color: transparent;
+	border: none;
+	font-size: 2.2rem;
+	color: var(--white)
+}
 }

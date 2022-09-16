@@ -1,4 +1,59 @@
-# Getting Started with Create React App
+
+# Tienda Copitos
+
+Proyecto e-commerce de una tienda de ropa de niños.
+
+
+## Contenido
+
+ - Este proyecto (actuanmente en desarrollo) tiene una única rama, main.
+ - Incompleto para comercializar.
+
+## Objetivos y Características
+
+El objetivo del proyecto es crear una Tienda E-commerce (un sistema de venta de productos con gestión de su base de datos a través de Firebase), en una single-page application (SPA), o aplicación de página única. Donde se puede navegar por los distintos productos (también sobre sus categorías) e ir a sus detalles. Desde el detalle se puede ver la descripción, foto y precio del producto y permite agregarlos al carrito. También se pueden ver y modificar los elementos del carrito, para luego finalizar la compra de los elementos cargados al mismo a través del llenado de un formulario de compra. Y finaliza guardando la orden de compra (con todos sus productos más la fecha de compra) en una base de datos del proyecto, alojada en Firebase.
+
+
+## Tecnologias utilizadas
+
+- HTML
+- CSS
+- React Js
+- Firebase
+## Ejecución
+Para ejecutar este proyecto simplemente escriba y ejecute en su consola de Visual Studio Code:
+- npm install i para instalar todas las dependencias
+- npm install start para renderizar el proyecto en un host local
+## Dependencias del Proyecto:
+
+- "@fortawesome/fontawesome-svg-core": "^6.1.2",
+- "@fortawesome/free-regular-svg-icons": "^6.1.2",
+- "@fortawesome/free-solid-svg-icons": "^6.1.2",
+- "@fortawesome/react-fontawesome": "^0.2.0",
+- "@testing-library/jest-dom": "^5.16.4",
+- "@testing-library/react": "^13.3.0",
+- "@testing-library/user-event": "^13.5.0",
+- "bootstrap": "^5.2.0",
+- "firebase": "^9.9.3",
+- "react": "^18.2.0",
+- "react-dom": "^18.2.0",
+- "react-router-dom": "^6.3.0",
+- "react-scripts": "5.0.1",
+- "web-vitals": "^2.1.4"
+## Screenshots
+
+![home](/public/img/home.png)
+![categoria](/public/img/categoria.png)
+![detalle](/public/img/detalle.png)
+![carrito](/public/img/carrito.png)
+![formulario](/public/img/formulario.png)
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +123,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ -->

@@ -1,5 +1,3 @@
-
- 
 .container-amount{
   font-family: 'Nunito', sans-serif;
   padding-bottom: 5px;
@@ -19,6 +17,7 @@
  
 .btn-plus-less{
   border-radius: 7rem;
+  margin: 8px;
 }
  
 .btn-counter {

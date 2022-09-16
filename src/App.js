@@ -13,7 +13,7 @@ function App() {
       <CartContextProvider>
         <NavBar/>
         <Routes>
-          <Route path='/' element={ <ItemListContainer greeting="Bienvenido..." />} />
+          <Route path='/' element={ <ItemListContainer greeting="Bienvenido a Copitos" />} />
           <Route path='/category/:idCategory' element={<ItemListContainer/>}/>
           <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
           <Route path='/cart' element={<Cart/>} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import ItemList from "../itemList/ItemList";
 import { useParams } from "react-router-dom";
 import './itemListContainer.css';
-import firestoreDB from '../../services/dataBase';
+import firestoreDB from '../../firebase/dataBase';
 import { getDocs, collection, query, where} from 'firebase/firestore';
 /* import { faLeftLong } from "@fortawesome/free-solid-svg-icons"; */
  

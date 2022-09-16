@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./userForm.css";
 import { collection, addDoc} from "firebase/firestore";
 import { useCartContext } from "../cartContext/CartContext";
-import firestoreDB from "../../services/dataBase";
+import firestoreDB from "../../firebase/dataBase";
 
 
 function UserForm() {

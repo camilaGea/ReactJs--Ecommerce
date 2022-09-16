@@ -7,9 +7,8 @@ function CartWidget (cantidad){
     const {totalProductsInCart} = useCartContext();
     if (totalProductsInCart()!==0){
     return(
-        <div className="cart-cant">
-            <FontAwesomeIcon className="cart-icon" icon= {faCartShopping} />
-            {` `+ totalProductsInCart()}
+        <div className="cart-icon">
+           <FontAwesomeIcon icon={faCartShopping}/>{` `+ totalProductsInCart()}
         </div>
     );}
     return (

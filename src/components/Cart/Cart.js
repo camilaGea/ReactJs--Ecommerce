@@ -23,8 +23,7 @@ function Cart(){
                     <table className="table text-center table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>                                                      
-                                <th>Nombre</th>
+                                <th>Producto</th>                                                      
                                 <th>Cantidad</th>
                                 <th>Precio</th>
                                 <th>Total</th>
@@ -34,8 +33,7 @@ function Cart(){
                         <tbody>
                             {cartItems.map((prod) => (
                             <tr>
-                                <td key={prod.id}> <img src={prod.img} alt={prod.nombre} className="shadow-lg" style={{height: 100}} /></td>
-                                <th>{prod.nombre}</th>
+                                <td key={prod.id + prod.nombre}><img src={prod.img} alt={prod.nombre} className="shadow-lg" style={{height: 100}} /></td>
                                 <th>{prod.cantidad}</th>
                                 <th>{prod.precio}</th>
                                 <th>{prod.cantidad * prod.precio}</th>

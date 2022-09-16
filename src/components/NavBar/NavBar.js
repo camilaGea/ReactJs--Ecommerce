@@ -1,33 +1,33 @@
 import "./navBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
- 
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
 function NavBar(){
+    const [mobile, setMobile] = React.useState(false)
     return(
-        <header className="header">
-        <nav className='navbar navbar-expand-lg nav-color'>
-            <div className='container-fluid '>
-                <p className='navbar-brand text-dark pe-5 mt-2'>COPITOS</p>
-                <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className='navbar-toggler-icon'></span>
+        <header className='header'>
+            <nav className='header-nav'>
+                <NavLink to={"/"} className='header-logo'><span>COPITO</span></NavLink>
+                <ul className={mobile ? "nav-links-mobile" : "nav-links"} onClick={() => setMobile(false)}>
+                    <NavLink to={"/"} className='ul-li' >Home</NavLink>
+                                                   
+                    <NavLink to={`category/nena`} className='ul-li'>Nena</NavLink>
+                                                                              
+                    <NavLink to={`category/nene`} className='ul-li'>Nene</NavLink>
+                                                                              
+                    <NavLink to={`category/bebe`} className='ul-li'>Bebe</NavLink>
+                </ul>
+                <button className='mobile-menu-icon' onClick={() => setMobile(!mobile)}>
+                    {mobile ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />}
                 </button>
-                <div className='collapse navbar-collapse' id="navbarNav">
-                    <ul className='navbar-nav'>
-                        <NavLink to={"/"} className='nav-link active' aria-current="page">Home</NavLink>
-                                                   
-                        <NavLink to={`category/nena`} className='nav-link'>Nena</NavLink>
-                                                   
-                        <NavLink to={`category/nene`} className='nav-link'>Nene</NavLink>
-                                                   
-                        <NavLink to={`category/bebe`} className='nav-link'>Bebe</NavLink>
-                    </ul>
-                </div>
-                <NavLink to={`/cart`}>
-                    <CartWidget/>
-                </NavLink>
-            </div>
-        </nav>
-    </header>
+                <NavLink to={`/cart`}> <CartWidget/> </NavLink>
+            </nav>
+      </header >
+
     );
 }
  
